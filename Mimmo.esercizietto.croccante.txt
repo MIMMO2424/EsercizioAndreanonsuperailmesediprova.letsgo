@@ -1,0 +1,59 @@
+Risposte esercizio
+1) Quanti topic ci sono nella bag? 
+
+
+La bag contiene 5 topic:
+
+/imu/acceleration
+/imu/angular_velocity
+/imu/data
+/zed2i/zed_node/left_gray/image_rect_gray
+/system_info
+
+
+2)  Frequenza (Hz) del topic immagine 
+
+Hz= 311 (numero dei messaggi)/ 10626 (secondi) = 29.28
+
+
+
+3)Determine the Hz of the topic system
+
+Hz= 19/10626 = 1.79 Hz
+
+
+
+4) Cosa restituisce il topic /system_info?
+
+Carico della CPU.
+
+Utilizzo della memoria.
+
+Stato del sistema operativo.
+(credo)
+
+5) comandi usati :
+
+Creare il workspace ROS 2:
+source /opt/ros/foxy/setup.bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+source install/local_setup.bash
+
+
+Comandi per lavorare con i file .bag e Foxglove
+
+unzip e mv per spostare i file
+
+ros bag info  ~/ros2_ws/src rosbag2_file                         
+
+Creare un pacchetto ROS 2 con Python:
+ros2 pkg create --build-type nome_pac nodo (creazione) 
+nano file (modificare i file in base a guida https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
+colcon build --packages-select nome_pac
+source install/setup.bash
+ros2 run nome_pac nome nodo (eseguzione)
+
+
+
+
